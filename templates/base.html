@@ -28,6 +28,8 @@
                             <li class="nav-item">
                                 <a href="{% url 'logout' %}" class="nav-link">Log Out</a>
                             </li>
+                        {% else %}
+                                <meta>{% url 'login' %}"</>
                         {% endif %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'post_new' %}">New Post</a>
@@ -37,12 +39,6 @@
             </div>
         </nav>
     </header>
-    {% if user.is_authenticated %}
-
-    {% else %}
-        <p>You are not logged in!</p>
-        <a href="{% url 'login' %}">Log In</a>
-    {% endif %}
     {% block content %}
     {% endblock %}
 </div>
